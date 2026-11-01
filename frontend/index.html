@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6ef"><title>MoodNest — Your wellness, gently</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script><script defer src="js/api.js"></script><script defer src="js/auth.js"></script><script defer src="js/dashboard.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html"><span class="brand-mark">m</span><span>MoodNest<span class="brand-dot">.</span><small>YOUR PERSONAL SPACE</small></span></a>
+    <div class="nav-label">YOUR SPACE</div>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="nav-link active" href="index.html"><span class="nav-icon">⌂</span> Overview</a>
+      <a class="nav-link" href="journal.html"><span class="nav-icon">✎</span> Daily journal</a>
+      <a class="nav-link" href="weekly.html"><span class="nav-icon">▦</span> Your week</a>
+      <a class="nav-link" href="insights.html"><span class="nav-icon">↗</span> Insights</a>
+    </nav>
+    <div class="sidebar-note"><span class="note-spark">✳</span><p>Small check-ins can make space for big understanding.</p><span>One day at a time.</span></div>
+    <div class="sidebar-bottom"><div class="privacy-line"><span class="privacy-dot"></span> Your journal is private</div><button class="user-chip" id="user-chip" type="button"><span class="avatar" id="user-avatar">M</span><span class="user-info"><strong id="user-name">My account</strong><small id="user-email">Loading profile…</small></span><span class="user-menu">⌄</span></button><button class="text-button" id="logout-button" type="button">Sign out ↗</button></div>
+  </aside>
+  <main class="main-content">
+    <header class="topbar"><button class="mobile-menu" id="mobile-menu" aria-label="Open navigation">☰</button><span class="eyebrow" id="today-label">YOUR WELLNESS SPACE</span><span class="topbar-right"><span class="live-dot"></span> A gentle moment for you</span></header>
+    <section class="page-wrap">
+      <div class="welcome-row"><div><p class="eyebrow">YOUR DAILY PAUSE</p><h1 id="greeting">Hello, there <span class="wave">✳</span></h1><p class="muted">There’s no right way to feel. Start wherever you are.</p></div><a class="button button-primary" href="journal.html">＋ Write today’s entry</a></div>
+      <section class="hero-card">
+        <div class="hero-copy"><span class="hero-kicker">A LITTLE SPACE TO CHECK IN</span><h2>Make room for<br><em>how you feel.</em></h2><p>Your feelings don’t need fixing. They deserve a little attention, a little kindness, and a place to land.</p><a class="hero-link" href="journal.html">Take a mindful minute <span>↗</span></a></div>
+        <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div><div class="art-flower">✳</div><div class="art-caption">breathe in<br><strong>breathe out</strong></div></div>
+      </section>
+      <div class="section-heading"><div><p class="eyebrow">A QUICK CHECK-IN</p><h2>Your today, at a glance</h2></div><span class="date-pill" id="date-pill">Today</span></div>
+      <section class="stats-grid">
+        <article class="stat-card mood-stat"><div class="stat-top"><span>Today’s mood</span><span class="stat-icon">◡</span></div><div class="stat-main"><span class="mood-orb" id="today-mood-icon">—</span><div><strong id="today-mood">Not checked in</strong><small id="today-mood-sub">Your feelings have a place here</small></div></div><a href="journal.html" class="card-link" id="mood-action">Add your mood <span>→</span></a></article>
+        <article class="stat-card"><div class="stat-top"><span>Last night’s sleep</span><span class="stat-icon">☾</span></div><div class="stat-main"><span class="sleep-icon">☾</span><div><strong id="today-sleep">— <small>hrs</small></strong><small id="today-sleep-sub">Log your rest</small></div></div><div class="mini-progress"><span id="sleep-progress"></span></div><small class="microcopy">A personal snapshot, not a score.</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Days journaled</span><span class="stat-icon">✧</span></div><div class="stat-main"><span class="streak-icon">✳</span><div><strong id="days-journaled">0 <small>days</small></strong><small>in the last 7 days</small></div></div><a href="weekly.html" class="card-link">See your week <span>→</span></a></article>
+      </section>
+      <section class="lower-grid">
+        <article class="panel week-panel"><div class="panel-heading"><div><p class="eyebrow">A WEEK IN REVIEW</p><h2>Your gentle rhythm</h2></div><a href="weekly.html" class="quiet-link">Full week ↗</a></div><div class="week-strip" id="week-strip"><div class="loading-line">Gathering your week…</div></div><p class="panel-footnote">Every feeling belongs. This is a record, not a rating.</p></article>
+        <article class="panel reflection-panel"><div class="reflection-mark">“</div><p class="eyebrow">A THOUGHT TO KEEP</p><h2>You don’t have to have it all figured out.</h2><p class="muted">Showing up for yourself, even for a moment, is enough for today.</p><a class="card-link" href="journal.html">Write a reflection <span>→</span></a></article>
+      </section>
+      <footer class="footer"><span>Made for your real, everyday self.</span><span><span class="privacy-dot"></span> Private by design</span></footer>
+    </section>
+  </main>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body></html>

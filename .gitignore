@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+backend/.env
+node_modules/
+**/node_modules/
+*.log
+npm-debug.log*
+MoodNest_Project.zip
